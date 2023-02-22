@@ -1,0 +1,18 @@
+---
+- name: Install packages
+  package:
+    name: "{{ mysql_community_repo_rpm_url }}"
+    state: present
+
+- name: Import GPG key
+  rpm_key:
+    key: "{{ mysql_community_repo_key_url }}"
+    state: present
+
+- name: Enable MySQL Community Server 5.7 repo
+  include_tasks: enable_57.yml
+  when: mysql_community_repo_version == "5.7"
+
+- name: Enable MySQL Community Server 8.0 repo
+  include_tasks: enable_80.yml
+  when: mysql_community_repo_version == "8.0"

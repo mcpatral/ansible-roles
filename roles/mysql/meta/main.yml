@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: rchouinard
+  description: MySQL Community Repository for RHEL/Fedora
+  role_name: repo_mysql_community
+  license: MIT
+  min_ansible_version: 2.5
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 6
+    - name: Fedora
+      verions:
+        - 28
+        - 27
+  galaxy_tags:
+    - packaging
+    - repository
+    - repo
+    - mysql
+    - database
+dependencies: []
